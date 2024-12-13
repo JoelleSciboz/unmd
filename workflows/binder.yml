@@ -17,8 +17,8 @@ jobs:
 
       - name: Push changes
         run: |
-          git config --global user.email "your-email@example.com"
-          git config --global user.name "your-username"
+          git config --global user.email "joelle.sciboz@gmail.com"
+          git config --global user.name "JoelleSciboz"
           git add .env
           git commit -m "Add API key for Binder"
           git push
