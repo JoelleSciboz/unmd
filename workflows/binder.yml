@@ -1,0 +1,24 @@
+name: Binder Environment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  binder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up API key
+        run: echo "UNDL_API_KEY=${{ secrets.UNDL_API_KEY }}" >> .env
+
+      - name: Push changes
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "your-username"
+          git add .env
+          git commit -m "Add API key for Binder"
+          git push
