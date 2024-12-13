@@ -14,3 +14,6 @@ dependencies:
   - python-dotenv
   - pip:
     - python-dotenv
+
+postBuild:
+  - ./start
