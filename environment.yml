@@ -3,11 +3,14 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.5
+  - python=3.11
   - pandas
   - xmltodict
   - requests
   - lxml
   - pip
   - jupyter
+  - ipykernel
   - python-dotenv
+  - pip:
+    - python-dotenv
