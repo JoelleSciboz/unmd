@@ -1,0 +1,5 @@
+#!/bin/bash
+#set +H  # Disable history expansion to prevent 'event not found' errors
+# Write the UNDL_API_KEY to a .env file
+echo "UNDL_API_KEY=${UNDL_API_KEY}" > .env
+exec "$@"

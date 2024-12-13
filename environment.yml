@@ -1,0 +1,13 @@
+name: binder-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.5
+  - pandas
+  - xmltodict
+  - requests
+  - lxml
+  - pip
+  - jupyter
+  - python-dotenv
