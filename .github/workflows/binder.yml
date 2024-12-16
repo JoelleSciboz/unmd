@@ -1,0 +1,29 @@
+name: Deploy to Binder
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Conda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        python-version: 3.11
+        environment-file: environment.yml
+        activate-environment: binder-env
+
+    - name: Deploy to Binder
+      env:
+        UNDL_API_KEY: ${{ secrets.UNDL_API_KEY }}
+      run: |
+        echo "UNDL_API_KEY=${{ secrets.UNDL_API_KEY }}" >> .env
+        # Add any additional deployment steps here
