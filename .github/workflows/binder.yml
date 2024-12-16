@@ -26,4 +26,5 @@ jobs:
         UNDL_API_KEY: ${{ secrets.UNDL_API_KEY }}
       run: |
         echo "UNDL_API_KEY=${{ secrets.UNDL_API_KEY }}" >> .env
-        # Add any additional deployment steps here
+        cat .env  # Verify the content of the .env file
+        ls -la    # List the contents of the directory to ensure .env is created
