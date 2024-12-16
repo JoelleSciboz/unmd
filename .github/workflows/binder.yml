@@ -21,10 +21,18 @@ jobs:
         environment-file: environment.yml
         activate-environment: binder-env
 
+    - name: Print Current Directory
+      run: pwd
+
+    - name: List Directory Contents Before
+      run: ls -la
+
     - name: Deploy to Binder
       env:
         UNDL_API_KEY: ${{ secrets.UNDL_API_KEY }}
       run: |
         echo "UNDL_API_KEY=${{ secrets.UNDL_API_KEY }}" >> .env
         cat .env  # Verify the content of the .env file
-        ls -la    # List the contents of the directory to ensure .env is created
+
+    - name: List Directory Contents After
+      run: ls -la
